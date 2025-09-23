@@ -3,21 +3,21 @@
 Day-1 of Video demonstrates the process of simulating and synthesizing digital circuits using industry-standard tools. We start with Icarus Verilog (iverilog) and GTKWave for functional simulation, allowing us to verify the correctness of our Verilog designs by observing waveform outputs. Then, we move to Yosys, an open-source synthesis tool, to convert the Verilog code into a gate-level representation, preparing it for implementation on FPGAs or ASICs. This workflow highlights the complete journey from writing RTL code to verifying and synthesizing it efficiently.
 ## Table of Contents
 
- [1. Design and Testbench](#1-Design-and-Testbench)
+ [1. Design and Testbench](#design-and-testbench)
  
- [2. Multiplexer Code ](#1-Multiplexer-Code) 
+[2. Multiplexer Code](#multiplexer-code) 
 
- [3. VIM Text Editor](#1-VIM-Text-Editor)
+[3. VIM Text Editor](#vim-text-editor)
 
- [4. Iverilog Simulator](#1-Iverilog-Simulator)
+[4. Iverilog Simulator](#iverilog-simulator)
 
- [5. GTKWave](#1-GTKWave)
+[5. GTKWave](#gtkwave)
 
- [6. Netlist](#1-Netlist)
+[6. Netlist](#netlist)
 
- [7. Standard Cells](#1-Cells)
+[7. Standard Cells](#standard-cells)
 
- [8. Yosys Synthesizer](#1-Yosys)
+[8. Yosys Synthesizer](#yosys-synthesizer)
 
 
 ### Design and Testbench
