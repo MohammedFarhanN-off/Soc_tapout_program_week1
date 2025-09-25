@@ -1,14 +1,16 @@
+
+
 # Combinational and Sequential Optimations
 
  Combinational and sequential optimizations are fundamental techniques in digital circuit design, particularly for improving the performance, power consumption, and area of integrated circuits. Combinational optimization focuses on reducing the complexity of logic functions (like using Karnaugh maps or Quine-McCluskey) to minimize the number of gates and interconnections, which directly impacts the circuit's speed and size. Sequential optimization, on the other hand, deals with the state-holding elements (like flip-flops or latches) and their connectivity, aiming to reduce the number of states, simplify the state transitions, or optimize the clocking scheme to improve overall circuit efficiency and speed while maintaining the correct functionality.
 
 ## Content
 
-1.[Combinational Logic Optimation](#combinational-logic-optimation)
+1. [Combinational Logic Optimisation](#combinational-logic-optimisation)  
+2. [Sequential Logic Optimisation](#sequential-logic-optimisation)
 
-2.[Sequential Logic Optimation](#sequential-logic-optimation)
 
-### Combinational Logic Optimation
+### Combinational Logic Optimisation
 This overall topic is about finding the most efficient way to implement a combinational logic function.
 
 #### Squeezing the logic to get the most optimised design
@@ -35,7 +37,7 @@ Quine-McCluskey: A tabular, algorithmic method for simplifying Boolean expressio
    
       gvim opt_check* -o
    
-![image alt]()
+![image alt](https://github.com/MohammedFarhanN-off/Soc_tapout_program_week1/blob/main/Day-3/Images/VirtualBox_Ubuntu_24_09_2025_12_56_13.png?raw=true)
 
 ##### Synthesis
 
@@ -45,25 +47,25 @@ Quine-McCluskey: A tabular, algorithmic method for simplifying Boolean expressio
 
     opt_clean -purge
 
-![image alt]()
+![image alt](https://github.com/MohammedFarhanN-off/Soc_tapout_program_week1/blob/main/Day-3/Images/VirtualBox_Ubuntu_24_09_2025_12_57_07.png?raw=true)
 
  Ternary operator expression **(a?b:0)** can be optimized into a single logic operation.
 
  Optimized logic : **(a.b)**
 
- ![image alt]()
+ ![image alt](https://github.com/MohammedFarhanN-off/Soc_tapout_program_week1/blob/main/Day-3/Images/VirtualBox_Ubuntu_24_09_2025_12_50_28.png?raw=true)
 
  Ternary operator expression **(a?1:b)** can be optimized into a single logic operation.
 
  Optimized logic : **(a+b)**
 
- ![image alt]()
+ ![image alt](https://github.com/MohammedFarhanN-off/Soc_tapout_program_week1/blob/main/Day-3/Images/VirtualBox_Ubuntu_24_09_2025_12_58_27.png?raw=true)
 
  Ternary operator expression **(a?(c?b):0)** can be optimized into a single logic operation.
 
  Optimized logic : **(a.b.)**
  
- ![image alt]()
+ ![image alt](https://github.com/MohammedFarhanN-off/Soc_tapout_program_week1/blob/main/Day-3/Images/VirtualBox_Ubuntu_24_09_2025_13_00_18.png?raw=true)
 
  Ternary operator expression **(a?(b?(a&c):c):!c)** can be optimized into a single logic operation.
 
@@ -72,9 +74,11 @@ Quine-McCluskey: A tabular, algorithmic method for simplifying Boolean expressio
 ##### Code
       gvim multiple_module_opt* -O
    
- ![image alt]()
+ ![image alt](https://github.com/MohammedFarhanN-off/Soc_tapout_program_week1/blob/main/Day-3/Images/VirtualBox_Ubuntu_25_09_2025_08_29_15.png?raw=true)
 
 ###### Synthesis
+
+![image alt](https://github.com/MohammedFarhanN-off/Soc_tapout_program_week1/blob/main/Day-3/Images/VirtualBox_Ubuntu_24_09_2025_13_57_29.png?raw=true)
 
  |Instance|Inputs|logic|Output|Result|
  |:-------|:-----|:----|:-----|:-----|
@@ -84,7 +88,7 @@ Quine-McCluskey: A tabular, algorithmic method for simplifying Boolean expressio
 
  The entire multiple_module_opt is equivalent to: **y=(a&b)|c**
 
- ![image alt]()
+ ![image alt](https://github.com/MohammedFarhanN-off/Soc_tapout_program_week1/blob/main/Day-3/Images/VirtualBox_Ubuntu_24_09_2025_13_45_53.png?raw=true)
 
   |Instance|Inputs|logic|Output|Result|
  |:-------|:-----|:----|:-----|:-----|
@@ -95,10 +99,10 @@ Quine-McCluskey: A tabular, algorithmic method for simplifying Boolean expressio
 
   The entire multiple_module_opt is equivalent to: **y=0**
 
-  ### Sequential Logic Optimation
+  ### Sequential Logic Optimisation
   Sequential logic optimization aims to reduce circuit area, power consumption, and improve operational speed (timing/clock frequency) without changing the circuit's overall function.
 
-#### Basic Optimizations
+#### Basic Optimisations
 ##### Sequential Constant Propagation
 
 This is an extension of standard combinational constant propagation.
@@ -109,7 +113,7 @@ Example: If a flip-flop's data input (D) is permanently wired to '0', the optimi
 
 Result: Reduces the cell count and potentially eliminates wires, leading to a smaller, faster circuit.
 
-#### Advanced Optimizations
+#### Advanced Optimisations
 These techniques involve more complex analysis and modification of the circuit's timing or state structure.
 
 **State Optimisation**
@@ -144,11 +148,11 @@ Result: Reduces interconnect delay and wire congestion, improving overall timing
  
     gvim dff_const* -O
 
-![image alt]()
+![image alt](https://github.com/MohammedFarhanN-off/Soc_tapout_program_week1/blob/main/Day-3/Images/VirtualBox_Ubuntu_24_09_2025_14_32_52.png?raw=true)
 
 ##### Synthesis
 
-![image alt]()
+![image alt](https://github.com/MohammedFarhanN-off/Soc_tapout_program_week1/blob/main/Day-3/Images/VirtualBox_Ubuntu_24_09_2025_14_34_49.png?raw=true)
 
 ##### Logic Analysis: Synthesized DFF (`dff_const1`)
 
@@ -180,7 +184,7 @@ This occurs when the external input `reset` is **HIGH (1)**, causing the inverte
 | **Action** | The output Q is asynchronously forced to the reset state. |
 | **Result** | Q_next = 0|
 
-![image alt]()
+![image alt](https://github.com/MohammedFarhanN-off/Soc_tapout_program_week1/blob/main/Day-3/Images/VirtualBox_Ubuntu_24_09_2025_14_35_48.png?raw=true)
 
 ##### Final Logic: Constant Output Optimization
 
@@ -208,7 +212,7 @@ The tool performed **Constant Propagation** and **Sequential Logic Elimination**
 
 The netlist is a hardware implementation of a **constant '1' generator**, often used to provide power (VCC) to a signal line.
 
-![image alt]()
+![image alt](https://github.com/MohammedFarhanN-off/Soc_tapout_program_week1/blob/main/Day-3/Images/VirtualBox_Ubuntu_24_09_2025_14_37_14.png?raw=true)
 
 ##### Final Logic: Double-Stage Constant Setter (`dff_const3`)
 
@@ -238,7 +242,7 @@ The entire circuit is optimized into a **Constant '1' Generator**. The reset sig
 | **Normal State** | The final output Q is permanently **Logic High (1)**. |
 | **Boolean Equation** | Q = 1(During normal, non-reset operation) |
 
-![image alt]
+![image alt](https://github.com/MohammedFarhanN-off/Soc_tapout_program_week1/blob/main/Day-3/Images/VirtualBox_Ubuntu_24_09_2025_14_38_14.png?raw=true)
 
 ##### Final Logic: Initialized Hold Register (`dff_const4`)
 
@@ -265,21 +269,21 @@ The element acts as a **Memory Cell** initialized by the reset signal. The input
 
 The most common implementation is a basic register whose value is fixed at VCC (`1'b1`) by the reset, and never changes afterward.
 
-![image alt]
-# 🔒 Final Logic: Initialized Hold Register (`dff_const5`)
+![image alt](https://github.com/MohammedFarhanN-off/Soc_tapout_program_week1/blob/main/Day-3/Images/VirtualBox_Ubuntu_24_09_2025_14_39_39.png?raw=true)
+##### Final Logic: Initialized Hold Register (`dff_const5`)
 
 The `dff_const5` module implements a basic memory element whose state is controlled **only by the asynchronous reset signal**, making the clock logic redundant for value changes.
 
-### 1. Circuit Structure
+##### 1. Circuit Structure
 The Verilog code (likely `if(reset) q <= 1'b0; else q <= q;`) instructs the DFF to always hold its current value when the reset is inactive.
 
-### 2. Logic Optimization
+##### 2. Logic Optimization
 The synthesis tool performs **Logic Elimination** and **Sequential Constant Propagation**:
 
 * **Redundant Clock:** Since the next state ($\mathbf{q}_{\text{next}}$) is always the current state ($\mathbf{q}$), the clock edge is irrelevant to changing the value (it only *allows* the value to be held).
 * **Hold Register:** The tool implements a basic memory element whose only control input is the asynchronous reset signal.
 
-### 3. Final Logical Behavior
+##### 3. Final Logical Behavior
 
 The element acts as a **Memory Cell** initialized by the reset signal. The inputs $\text{clk}$ and $\text{input}$ are completely ignored in the steady-state logic.
 
@@ -295,80 +299,81 @@ The final implementation is an **initialized constant register** whose value is 
 
 ##### Code
 gvim counter_opt* -O
-![image alt]()
+![image alt](https://github.com/MohammedFarhanN-off/Soc_tapout_program_week1/blob/main/Day-3/Images/VirtualBox_Ubuntu_24_09_2025_16_48_22.png?raw=true)
 
 ##### Synthesis
+![image alt](https://github.com/MohammedFarhanN-off/Soc_tapout_program_week1/blob/main/Day-3/Images/VirtualBox_Ubuntu_24_09_2025_16_50_25.png?raw=true)
 
-# 🔄 Final Logic: Divide-by-2 Counter Optimization
+##### Final Logic: Divide-by-2 Counter Optimization
 
 This netlist shows the synthesized and optimized circuit for a simple **Toggle Flip-Flop** or **Divide-by-2 Counter** (`counter_opt`).
 
-### 1. Circuit Structure
+##### 1. Circuit Structure
 The core of the circuit is a single **D-Flip-Flop (DFF)** with logic configured for state toggling.
 
 | Component | Function | Detail |
 | :--- | :--- | :--- |
 | **Sequential Element** | D-Flip-Flop (`dfrbp`) | Stores the current counter state (Q). |
-| **Control Logic** | Inverter (`clkinv`) | Used to convert the active-high $\text{reset}$ into the active-low $\text{RESET\_B}$ required by the DFF. |
+| **Control Logic** | Inverter (`clkinv`) | Used to convert the active-high reset into the active-low ~RESET_B required by the DFF. |
 
 ---
 
-### 2. Logic Implementation
+##### 2. Logic Implementation
 
 The circuit implements a **toggle function** through feedback:
 
-* **Feedback/Toggle Logic:** The Data Input (**D**) of the DFF is driven by the **inverted output ($\text{Q!}$) of the flip-flop**.
-    * This connection implements the required toggle logic: $\mathbf{D = \overline{Q}}$.
-* **Final Output:** The signal $\mathbf{q}$ is generated by inverting the flip-flop's primary output ($\text{Q}$).
-    * This implements the logic: $\mathbf{q = \overline{Q}}$.
+* **Feedback/Toggle Logic:** The Data Input (**D**) of the DFF is driven by the **inverted output ~Q of the flip-flop**.
+    * This connection implements the required toggle logic: D = Q.
+* **Final Output:** The signal Q is generated by inverting the flip-flop's primary output Q.
+    * This implements the logic: D = Q.
 
-### 3. Functional Behavior
+##### 3. Functional Behavior
 
 The circuit acts as a **Toggle Flip-Flop**:
 
 * **Operation:** On every positive clock edge, the DFF loads the opposite of its current state, causing its output (Q) to **toggle** (flip state).
-* **Result:** The output signal **q** toggles at exactly **half the frequency** of the input clock ($\text{clk}$).
+* **Result:** The output signal **q** toggles at exactly **half the frequency** of the input clock clk.
 
-### 🧠 Boolean Equation
+##### 4.Boolean Equation
 The core sequential logic is:
 
-$$\mathbf{Q_{\text{next}} = \overline{Q}}$$
+Q_next= Q
 
-![image alt]()
+![image alt](https://github.com/MohammedFarhanN-off/Soc_tapout_program_week1/blob/main/Day-3/Images/VirtualBox_Ubuntu_24_09_2025_16_56_04.png?raw=true)
 
-# 🔢 Final Logic: Multi-Bit Synchronous Counter
+##### Final Logic: Multi-Bit Synchronous Counter
 
 This netlist shows the synthesized and optimized implementation of a **Multi-Bit Synchronous Counter** (likely 2-bit) using standard logic cells.
 
-### 1. Circuit Structure
+##### 1. Circuit Structure
 The circuit uses at least **two cascaded D-Flip-Flops (DFFs)** to store the counter's state (Q0, Q1, etc.) and a complex block of combinational gates to calculate the next state.
 
 | Component | Function | Detail |
 | :--- | :--- | :--- |
-| **Sequential Elements** | Two D-Flip-Flops (`dffrp`) | Stores the current state ($\mathbf{Q_0}$ and $\mathbf{Q_1}$). |
-| **Combinational Block** | $\text{OAI21, AND2, etc.}$ | Calculates the next state inputs ($\mathbf{D_0}$, $\mathbf{D_1}$) based on the current state. |
-| **Control Logic** | Inverter Chain | Converts the active-high $\text{reset}$ into the active-low $\text{RESET\_B}$ signal. |
+| **Sequential Elements** | Two D-Flip-Flops (`dffrp`) | Stores the current state Q0 and Q1. |
+| **Combinational Block** | OAI21, AND2, etc. | Calculates the next state inputs D0, D1 based on the current state. |
+| **Control Logic** | Inverter Chain | Converts the active-high reset into the active-low  ~RESET_B signal. |
 
 ---
 
-### 2. Logic Implementation
+##### 2. Logic Implementation
 
 The complexity comes from the fact that the next state of a higher bit depends on the current state of all lower bits.
 
 * **LSB Logic (Bit 0):** This bit is implemented with simple toggle logic, similar to the single-bit counter.
-    $$\mathbf{D_0 = \overline{Q_0}}$$
-* **MSB Logic (Bit 1):** The next state is calculated by a more complex function that only allows the MSB to toggle when the LSB is '1'. The logic utilizes gates like $\text{OAI21}$ and $\text{AND2}$ to implement the function, typically an Exclusive-OR (XOR):
-    $$\mathbf{D_1 = Q_1 \oplus Q_0}$$
+    D0 = Q0
+* **MSB Logic (Bit 1):** The next state is calculated by a more complex function that only allows the MSB to toggle when the LSB is '1'. The logic utilizes gates like OAI21 and AND2 to implement the function, typically an Exclusive-OR (XOR):
+    D1 = Q1 Q0
 
-### 3. Functional Behavior
+##### 3. Functional Behavior
 
 The circuit acts as an **N-bit Synchronous Up-Counter**:
 
-* **Synchronization:** All state bits ($\text{Q0, Q1, etc.}$) update simultaneously on the positive edge of the $\text{clk}$.
-* **Counting:** The state transitions sequentially (00 $\rightarrow$ 01 $\rightarrow$ 10 $\rightarrow$ 11 $\rightarrow$ 00...).
-* **Reset:** The entire counter is cleared to $\mathbf{00}$ when the $\text{reset}$ signal is active.
+* **Synchronization:** All state bits Q0, Q1, etc. update simultaneously on the positive edge of the clk.
+* **Counting:** The state transitions sequentially (00  01 10  11  00...).
+* **Reset:** The entire counter is cleared to 00 when the reset signal is active.
 
-**The primary complexity visible in the center of the diagram is the result of mapping the XOR/AND-OR next-state logic onto the available standard cells.**
+
 
 
 
@@ -386,4 +391,3 @@ The circuit acts as an **N-bit Synchronous Up-Counter**:
 
   
   
-
