@@ -5,9 +5,8 @@
  Combinational and sequential optimizations are fundamental techniques in digital circuit design, particularly for improving the performance, power consumption, and area of integrated circuits. Combinational optimization focuses on reducing the complexity of logic functions (like using Karnaugh maps or Quine-McCluskey) to minimize the number of gates and interconnections, which directly impacts the circuit's speed and size. Sequential optimization, on the other hand, deals with the state-holding elements (like flip-flops or latches) and their connectivity, aiming to reduce the number of states, simplify the state transitions, or optimize the clocking scheme to improve overall circuit efficiency and speed while maintaining the correct functionality.
 
 ## Content
-
-1. [Combinational Logic Optimisation](#combinational-logic-optimisation)  
-2. [Sequential Logic Optimisation](#sequential-logic-optimisation)
+[1.Combinational Logic Optimisation](#combinational-logic-optimisation)  
+[2.Sequential Logic Optimisation](#sequential-logic-optimisation)
 
 
 ### Combinational Logic Optimisation
