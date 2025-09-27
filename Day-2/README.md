@@ -2,12 +2,12 @@
  Timing libraries (Lib files) provide essential delay, power, and functional information of standard cells for accurate timing analysis. Hierarchical vs. flat synthesis deals with whether a design is compiled block-by-block (hierarchical) or as a whole (flat), each having trade-offs in runtime, memory, and optimization quality. Efficient flop coding styles in RTL ensure better synthesis results, reduce glitches, and improve timing closure while maintaining design reliability.
 
  ## Table of Contents
-1. [Dot Library File](./dot-libray-file-analysis)
-2. [Multiple Module Code Analysis](./multiple-module-code-analysis)
-3. [Hierarchical Synthesis](./hierarchical-synthesis)
-4. [Flattened Synthesis](./flattened-synthesis)
-5. [D-flipflop Code Styles](./D-flipflop-code-styles)
-6. [Multiplication Code](./multiplication-code)
+1. [Dot Library File](#dot-library-file)
+2. [Multiple Module Code Analysis](#multiple-module-code-analysis)
+3. [Hierarchical Synthesis](#hierarchical-synthesis)
+4. [Flattened Synthesis](#flattened-synthesis)
+5. [D-flipflop Code Styles](#d-flipflop-code-styles)
+6. [Multiplication Code](#multiplication-code)
 
 
 
@@ -34,7 +34,7 @@ In Text editor
 
 ![image alt](https://github.com/MohammedFarhanN-off/Soc_tapout_program_week1/blob/main/Day-2/Images/VirtualBox_Ubuntu_24_09_2025_10_33_45.png?raw=true)
 
-## Multiple Module Code Anlalysis
+## Multiple Module Code Analysis
 
 ![image alt](https://github.com/MohammedFarhanN-off/Soc_tapout_program_week1/blob/main/Day-2/Images/VirtualBox_Ubuntu_24_09_2025_09_11_43.png?raw=true)
 
